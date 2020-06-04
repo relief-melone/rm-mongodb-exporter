@@ -6,7 +6,8 @@ LABEL maintainer="Relief.Melone [relief.melone@gmail.com]"
 
 # Download Exporter
 RUN apk add curl && \
-    curl -L https://github.com/percona/mongodb_exporter/releases/download/v${MONGO_EXPORTER_VERSION}/mongodb_exporter-${MONGO_EXPORTER_VERSION}.linux-amd64.tar.gz
+    curl -L --output exporter.tar.gz \
+      https://github.com/percona/mongodb_exporter/releases/download/v0.11.0/mongodb_exporter-0.11.0.linux-amd64.tar.gz
 
 # Install Exporter
 RUN tar -xzvf exporter.tar.gz && \
